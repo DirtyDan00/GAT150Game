@@ -180,10 +180,17 @@
     <ClInclude Include="..\..\..\CSC196\Game\Engine\Math\Vector2.h" />
     <ClInclude Include="..\Graphics\Renderer.h" />
     <ClInclude Include="..\Graphics\Texture.h" />
+    <ClInclude Include="Componet\Componet.h" />
+    <ClInclude Include="Componet\PhysicsComponet.h" />
+    <ClInclude Include="Componet\RenderComponet.h" />
+    <ClInclude Include="Componet\SpriteComponet.h" />
     <ClInclude Include="Core\System.h" />
     <ClInclude Include="Core\Timer.h" />
+    <ClInclude Include="Engine.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Input\InputSystem.h" />
+    <ClInclude Include="Object\GameObject.h" />
+    <ClInclude Include="Object\Object.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resources\Resource.h" />
     <ClInclude Include="Resources\ResourceManager.h" />
@@ -194,8 +201,12 @@
     <ClCompile Include="..\..\..\CSC196\Game\Engine\Math\Vector2.cpp" />
     <ClCompile Include="..\Graphics\Renderer.cpp" />
     <ClCompile Include="..\Graphics\Texture.cpp" />
+    <ClCompile Include="Componet\PhysicsComponet.cpp" />
+    <ClCompile Include="Componet\SpriteComponet.cpp" />
     <ClCompile Include="Core\Timer.cpp" />
+    <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Input\InputSystem.cpp" />
+    <ClCompile Include="Object\GameObject.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

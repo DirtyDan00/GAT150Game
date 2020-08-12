@@ -25,6 +25,12 @@
     <Filter Include="Input">
       <UniqueIdentifier>{c41458a6-e109-4b09-a1ff-25ea21ecc54f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Componet">
+      <UniqueIdentifier>{395ef107-5e1e-4683-a098-78099ec4198b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{592bf823-d689-43b4-be8c-f8da76413936}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -75,6 +81,27 @@
     <ClInclude Include="Core\Timer.h">
       <Filter>Core</Filter>
     </ClInclude>
+    <ClInclude Include="Object\Object.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Componet\Componet.h">
+      <Filter>Componet</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\GameObject.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Componet\PhysicsComponet.h">
+      <Filter>Componet</Filter>
+    </ClInclude>
+    <ClInclude Include="Componet\RenderComponet.h">
+      <Filter>Componet</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Componet\SpriteComponet.h">
+      <Filter>Componet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -103,6 +130,18 @@
     </ClCompile>
     <ClCompile Include="Core\Timer.cpp">
       <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\GameObject.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Componet\PhysicsComponet.cpp">
+      <Filter>Componet</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Componet\SpriteComponet.cpp">
+      <Filter>Componet</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
