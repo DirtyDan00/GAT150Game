@@ -4,7 +4,8 @@
 
 bool nc::PhysicsComponet::Create(void* data)
 {
-    m_velocity = nc::Vector2::forward * 100;
+    m_owner = static_cast<GameObject*>(data);
+    m_drag = 0.95f;
     return true;
 }
 

@@ -31,6 +31,9 @@
     <Filter Include="Objects">
       <UniqueIdentifier>{592bf823-d689-43b4-be8c-f8da76413936}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{6ba49111-f969-47b7-9be5-4018062b7106}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -38,27 +41,6 @@
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\CSC196\Game\Engine\Math\Color.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\CSC196\Game\Engine\Math\Math.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\CSC196\Game\Engine\Math\Matrix2x2.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\CSC196\Game\Engine\Math\Matrix3x3.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\CSC196\Game\Engine\Math\Random.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\CSC196\Game\Engine\Math\Transform.h">
-      <Filter>Math</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\CSC196\Game\Engine\Math\Vector2.h">
-      <Filter>Math</Filter>
     </ClInclude>
     <ClInclude Include="..\Graphics\Texture.h">
       <Filter>Graphics</Filter>
@@ -102,19 +84,58 @@
     <ClInclude Include="Componet\SpriteComponet.h">
       <Filter>Componet</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Json.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Color.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Math.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Matrix2x2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Matrix3x3.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Random.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Transform.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Math\Vector2.h">
+      <Filter>Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Assert.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Singleton.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\ObjectFactory.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Scene.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Componet\SpriteAnimationComponent.h">
+      <Filter>Componet</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Factory.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Physics\PhysicsSystem.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Componet\RigidBodyComponent.h">
+      <Filter>Componet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\CSC196\Game\Engine\Math\Color.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\CSC196\Game\Engine\Math\Transform.cpp">
-      <Filter>Math</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\CSC196\Game\Engine\Math\Vector2.cpp">
-      <Filter>Math</Filter>
     </ClCompile>
     <ClCompile Include="..\Graphics\Texture.cpp">
       <Filter>Graphics</Filter>
@@ -141,6 +162,36 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Componet\SpriteComponet.cpp">
+      <Filter>Componet</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Color.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Transform.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Math\Vector2.cpp">
+      <Filter>Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Json.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Assert.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\ObjectFactory.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Scene.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Componet\SpriteAnimationComponent.cpp">
+      <Filter>Componet</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\PhysicsSystem.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Componet\RigidBodyComponent.cpp">
       <Filter>Componet</Filter>
     </ClCompile>
   </ItemGroup>

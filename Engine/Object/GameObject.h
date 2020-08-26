@@ -2,7 +2,7 @@
 #include "Object/Object.h"
 #include "../Math/Transform.h"
 #include "Engine.h"
-#include <vector>
+#include <bitset>
 
 namespace nc
 {
@@ -10,10 +10,26 @@ namespace nc
 
 	class GameObject : public Object
 	{
-	public:
 
-		bool Create(void* data = nullptr);
-		void Destroy();
+	public:
+		enum eFlags
+		{
+			ACTIVE,
+			VISABLE,
+			DESTROY,
+			TRANSIENT
+		};
+
+
+	public:
+		GameObject() = default;
+		GameObject(const GameObject& other);
+
+		virtual bool Create(void* data = nullptr);
+		virtual void Destroy() override;
+		virtual Object* Clone() override { return new GameObject{*this}; }
+
+		void Read(const rapidjson::Value& value) override;
 
 		void AddComponet(Componet* componet);
 		void RemoveComponet(Componet* componet);
@@ -21,6 +37,8 @@ namespace nc
 
 		void Update();
 		void Draw();
+
+		void ReadComponents(const rapidjson::Value& value);
 
 		template<typename T>
 		T* GetComponet()
@@ -39,8 +57,14 @@ namespace nc
 		friend class PhysicsComponet;
 
 	public:
+		std::string m_name;
+		std::string m_tag;
+		float m_lifeTime{ 0 };
+
+		std::bitset<32> m_flags;
+
 		Transform m_transform;
-		Engine* m_engine;
+		Engine* m_engine{nullptr};
 
 	protected:
 		std::vector<Componet*> m_componets;

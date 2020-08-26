@@ -8,10 +8,11 @@
 #define PCH_H
 
 // add headers that you want to pre-compile here
-//#include"../Math/Math.h"
-//#include"../Math/Random.h"
-//#include"../Math/Transform.h"
-//#include"../Math/Color.h"
+#include "Math/Math.h"
+#include "Math/Random.h"
+#include "Math/Color.h"
+#include "Math/Transform.h"
+#include "Core/Assert.h"
 
 #include "framework.h"
 #include <SDL.h>
@@ -22,5 +23,6 @@
 #include <vector>
 #include <list>
 #include <chrono>
+#include <cassert>
 
 #endif //PCH_H
