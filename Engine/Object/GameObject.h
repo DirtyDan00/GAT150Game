@@ -33,10 +33,15 @@ namespace nc
 
 		void AddComponet(Componet* componet);
 		void RemoveComponet(Componet* componet);
-		void RemoveAlComponet();
+		void RemoveAllComponet();
 
 		void Update();
 		void Draw();
+
+		void BeginContact(GameObject* gameObject);
+		void EndContact(GameObject* gameObject);
+
+		std::vector<GameObject*> GetContactsWithTag(const std::string& tag);
 
 		void ReadComponents(const rapidjson::Value& value);
 
@@ -68,5 +73,6 @@ namespace nc
 
 	protected:
 		std::vector<Componet*> m_componets;
+		std::list<GameObject*> m_contacts;
 	};
 }

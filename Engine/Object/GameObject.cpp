@@ -30,7 +30,7 @@ namespace nc
     
     void nc::GameObject::Destroy()
     {
-
+        RemoveAllComponet();
     }
     void GameObject::Read(const rapidjson::Value& value)
     {
@@ -69,7 +69,7 @@ namespace nc
             delete(*iter);
         }
     }
-    void GameObject::RemoveAlComponet()
+    void GameObject::RemoveAllComponet()
     {
         for (auto componet : m_componets)
         {
@@ -98,6 +98,28 @@ namespace nc
         {
             componet->Draw();
         }
+    }
+    void GameObject::BeginContact(GameObject* gameObject)
+    {
+        m_contacts.push_back(gameObject);
+    }
+    void GameObject::EndContact(GameObject* gameObject)
+    {
+        m_contacts.remove(gameObject);
+
+    }
+    std::vector<GameObject*> GameObject::GetContactsWithTag(const std::string& tag)
+    {
+        std::vector<GameObject*> contacts;
+        for (auto contact : m_contacts)
+        {
+            if (contact->m_tag == tag)
+            {
+                contacts.push_back(contact);
+            }
+        }
+
+        return contacts;
     }
     void GameObject::ReadComponents(const rapidjson::Value& value)
     {

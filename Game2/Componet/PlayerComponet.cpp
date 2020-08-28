@@ -3,6 +3,7 @@
 #include "Input/InputSystem.h"
 #include "Componet/PhysicsComponet.h"
 #include "Componet/RigidBodyComponent.h"
+#include "Componet/AudioComponent.h"
 #include "Engine.h"
 
 namespace nc
@@ -18,21 +19,30 @@ namespace nc
 
 	void nc::PlayerComponet::Update()
 	{
+        auto contacts = m_owner->GetContactsWithTag("Floor");
+        bool onGround = !contacts.empty();
+
         nc::Vector2 force{ 0,0 };
         if (m_owner->m_engine->GetSystem<nc::InputSystem>()->GetButtonState(SDL_SCANCODE_A) == nc::InputSystem::eButtonState::HELD)
         {
-            force.x = -200000;
+            force.x = -100;
             //m_owner->m_transform.angle = m_owner->m_transform.angle - 200.f * m_owner->m_engine->GetTimer().DeltaTime();
         }
         if (m_owner->m_engine->GetSystem<nc::InputSystem>()->GetButtonState(SDL_SCANCODE_D) == nc::InputSystem::eButtonState::HELD)
         {
-            force.x = 200000;
+            force.x = 100;
             //m_owner->m_transform.angle = m_owner->m_transform.angle + 200.f * m_owner->m_engine->GetTimer().DeltaTime();
         }
-        if (m_owner->m_engine->GetSystem<nc::InputSystem>()->GetButtonState(SDL_SCANCODE_SPACE) == nc::InputSystem::eButtonState::PRESSED)
+        if (onGround && m_owner->m_engine->GetSystem<nc::InputSystem>()->GetButtonState(SDL_SCANCODE_SPACE) == nc::InputSystem::eButtonState::PRESSED)
         {
-            force.y = -200000;
+              force.y = -1500;
+              AudioComponent* audioComponent = m_owner->GetComponet<AudioComponent>();
+              if (audioComponent)
+              {
+                  audioComponent->Play();
+              }
         }
+
 
  
         //if (m_owner->m_engine->GetSystem<nc::InputSystem>()->GetButtonState(SDL_SCANCODE_W) == nc::InputSystem::eButtonState::HELD)
@@ -49,6 +59,12 @@ namespace nc
         if (component)
         {
             component->ApplyForce(force);
+        }
+
+        auto coinContacts = m_owner->GetContactsWithTag("Coin");
+        for (GameObject* contact : coinContacts)
+        {
+            contact->m_flags[GameObject::eFlags::DESTROY] = true;
         }
 	}
 }

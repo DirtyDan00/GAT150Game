@@ -34,6 +34,9 @@
     <Filter Include="Physics">
       <UniqueIdentifier>{6ba49111-f969-47b7-9be5-4018062b7106}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{c101cab0-a0dd-4d32-8350-83472fb068af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -132,6 +135,21 @@
     <ClInclude Include="Componet\RigidBodyComponent.h">
       <Filter>Componet</Filter>
     </ClInclude>
+    <ClInclude Include="Physics\ContactListener.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\AudioSystem.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\AudioChannel.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Audio\Sound.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Componet\AudioComponent.h">
+      <Filter>Componet</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -192,6 +210,21 @@
       <Filter>Physics</Filter>
     </ClCompile>
     <ClCompile Include="Componet\RigidBodyComponent.cpp">
+      <Filter>Componet</Filter>
+    </ClCompile>
+    <ClCompile Include="Physics\ContactListener.cpp">
+      <Filter>Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\AudioSystem.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\AudioChannel.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Audio\Sound.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Componet\AudioComponent.cpp">
       <Filter>Componet</Filter>
     </ClCompile>
   </ItemGroup>

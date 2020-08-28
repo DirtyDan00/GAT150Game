@@ -173,6 +173,10 @@
   <ItemGroup>
     <ClInclude Include="..\Graphics\Renderer.h" />
     <ClInclude Include="..\Graphics\Texture.h" />
+    <ClInclude Include="Audio\AudioChannel.h" />
+    <ClInclude Include="Audio\AudioSystem.h" />
+    <ClInclude Include="Audio\Sound.h" />
+    <ClInclude Include="Componet\AudioComponent.h" />
     <ClInclude Include="Componet\Componet.h" />
     <ClInclude Include="Componet\PhysicsComponet.h" />
     <ClInclude Include="Componet\RenderComponet.h" />
@@ -200,6 +204,7 @@
     <ClInclude Include="Object\ObjectFactory.h" />
     <ClInclude Include="Object\Scene.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Physics\ContactListener.h" />
     <ClInclude Include="Physics\PhysicsSystem.h" />
     <ClInclude Include="Resources\Resource.h" />
     <ClInclude Include="Resources\ResourceManager.h" />
@@ -207,6 +212,10 @@
   <ItemGroup>
     <ClCompile Include="..\Graphics\Renderer.cpp" />
     <ClCompile Include="..\Graphics\Texture.cpp" />
+    <ClCompile Include="Audio\AudioChannel.cpp" />
+    <ClCompile Include="Audio\AudioSystem.cpp" />
+    <ClCompile Include="Audio\Sound.cpp" />
+    <ClCompile Include="Componet\AudioComponent.cpp" />
     <ClCompile Include="Componet\PhysicsComponet.cpp" />
     <ClCompile Include="Componet\RigidBodyComponent.cpp" />
     <ClCompile Include="Componet\SpriteAnimationComponent.cpp" />
@@ -228,6 +237,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Physics\ContactListener.cpp" />
     <ClCompile Include="Physics\PhysicsSystem.cpp" />
     <ClCompile Include="Resources\ResourceManager.cpp" />
   </ItemGroup>

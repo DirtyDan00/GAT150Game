@@ -4,6 +4,7 @@
 #include "Resources/ResourceManager.h"
 #include "Input/InputSystem.h"
 #include "Core/Timer.h"
+#include "Audio/AudioSystem.h"
 
 namespace nc
 {
@@ -11,6 +12,7 @@ namespace nc
 
 	class Engine
 	{
+
 	public:
 		bool Startup();
 		void Shutdown();
@@ -21,10 +23,12 @@ namespace nc
 		inline T* GetSystem();
 
 		nc::FrameTimer& GetTimer() { return m_timer; }
+		
 
 	protected:
 		std::vector<System*> m_systems;
 		nc::FrameTimer m_timer;
+
 	};
 
 	template<typename T>
