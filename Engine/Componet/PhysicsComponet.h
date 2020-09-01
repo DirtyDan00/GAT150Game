@@ -14,12 +14,14 @@ namespace nc
 
 		virtual void Destroy() override;
 
-		virtual Object* Clone() override { return new PhysicsComponet{ *this }; }
+		virtual Object* Clone() const override { return new PhysicsComponet{ *this }; }
 
 		virtual void Update() override;
 
 		virtual void ApplyForce(const Vector2& force) { m_force = force; }
-	private:
+
+		virtual Vector2& GetVelocity() { return m_velocity; }
+	protected:
 		nc::Vector2 m_velocity;
 		nc::Vector2 m_force;
 		float m_drag{ 1 };

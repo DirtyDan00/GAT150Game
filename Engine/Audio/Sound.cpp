@@ -18,7 +18,7 @@ void nc::Sound::Destroy()
     }
 }
 
-void nc::Sound::Play(bool loop)
+nc::AudioChannel nc::Sound::Play(bool loop)
 {
     FMOD_MODE mode = (loop) ? FMOD_LOOP_NORMAL : FMOD_LOOP_OFF;
     m_sound->setMode(mode);
@@ -27,5 +27,5 @@ void nc::Sound::Play(bool loop)
     FMOD_RESULT result = m_system->playSound(m_sound, 0, false, &channel);
     ASSERT_MSG(result == FMOD_OK, "Error playing FMOD sound.");
 
-    //return AudioChannel{ channel };
+    return AudioChannel{ channel };
 }

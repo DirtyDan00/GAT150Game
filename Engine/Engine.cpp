@@ -49,4 +49,15 @@ namespace nc
             system->Update();
         }
     }
+    //void Engine::RestartGame()
+    //{
+    //    for (auto system : m_systems)
+    //    {
+    //        system->Shutdown();
+    //        delete system;
+    //    }
+    //    m_systems.clear();
+    //    SDL_Quit();
+    //
+    //}
 }

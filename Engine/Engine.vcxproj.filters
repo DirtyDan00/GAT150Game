@@ -150,6 +150,9 @@
     <ClInclude Include="Componet\AudioComponent.h">
       <Filter>Componet</Filter>
     </ClInclude>
+    <ClInclude Include="Core\EventManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -226,6 +229,9 @@
     </ClCompile>
     <ClCompile Include="Componet\AudioComponent.cpp">
       <Filter>Componet</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\EventManager.cpp">
+      <Filter>Core</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

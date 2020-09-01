@@ -11,7 +11,7 @@ namespace nc
 		virtual bool Create(const std::string& name, void* data = nullptr) override;
 		virtual void Destroy() override;
 
-		void Play(bool loop = false);
+		AudioChannel Play(bool loop = false);
 
 
 

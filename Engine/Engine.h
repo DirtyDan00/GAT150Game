@@ -19,6 +19,8 @@ namespace nc
 
 		void Update();
 
+		//void RestartGame();
+
 		template<typename T>
 		inline T* GetSystem();
 

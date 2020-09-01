@@ -143,8 +143,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Componet\EnemyComponent.cpp" />
     <ClCompile Include="Componet\PlayerComponet.cpp" />
+    <ClCompile Include="GameFunc.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="TileMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
@@ -152,7 +155,14 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Componet\EnemyComponent.h" />
     <ClInclude Include="Componet\PlayerComponet.h" />
+    <ClInclude Include="GameFunc.h" />
+    <ClInclude Include="TileMap.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\Build\scene.txt" />
+    <Text Include="..\Build\tileMap.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -3,7 +3,7 @@
 
 namespace nc
 {
-	class PlayerComponet : public Componet 
+	class EnemyComponet : public Componet
 	{
 	public:
 
@@ -13,12 +13,9 @@ namespace nc
 
 		virtual void Destroy() override;
 
-		virtual Object* Clone() const override { return new PlayerComponet{ *this }; }
+		virtual Object* Clone() const override { return new EnemyComponet{ *this }; }
 
 		virtual void Update() override;
-
-		void OnCollisionEnter(const Event& event);
-		void OnCollisionExit(const Event& event);
 
 	};
 }

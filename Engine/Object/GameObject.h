@@ -3,10 +3,12 @@
 #include "../Math/Transform.h"
 #include "Engine.h"
 #include <bitset>
+#include <list>
 
 namespace nc
 {
 	class Componet;
+	class Scene;
 
 	class GameObject : public Object
 	{
@@ -27,7 +29,7 @@ namespace nc
 
 		virtual bool Create(void* data = nullptr);
 		virtual void Destroy() override;
-		virtual Object* Clone() override { return new GameObject{*this}; }
+		virtual Object* Clone() const override { return new GameObject{*this}; }
 
 		void Read(const rapidjson::Value& value) override;
 
@@ -70,6 +72,7 @@ namespace nc
 
 		Transform m_transform;
 		Engine* m_engine{nullptr};
+		Scene* m_scene{ nullptr };
 
 	protected:
 		std::vector<Componet*> m_componets;

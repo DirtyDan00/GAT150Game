@@ -11,7 +11,7 @@ namespace nc
 		virtual bool Create(void* data = nullptr) override;
 		virtual void Destroy() override;
 
-		virtual Object* Clone() const { return new AudioComponent{*this}; }//override ask maple why it wont let me
+		virtual Object* Clone() const override { return new AudioComponent{*this}; }//override ask maple why it wont let me
 
 		virtual void Update() override;
 

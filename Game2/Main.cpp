@@ -5,19 +5,29 @@
 #include "Componet/PlayerComponet.h"
 #include "Core/Factory.h"
 #include "Core/Json.h"
+#include "Core/EventManager.h"
 #include "Object/ObjectFactory.h"
 #include "Object/Scene.h"
 #include "Physics/PhysicsSystem.h"
+#include "Componet/EnemyComponent.h"
+#include "TileMap.h"
 
 nc::Engine engine;
-nc::GameObject player;
 nc::Scene scene;
-//nc::ObjectFactory objectFactory;
+
+void GameEvent(const nc::Event& event)
+{
+    std::cout << "You have died!" << std::endl;
+    
+}
+void GameEvent2(const nc::Event& event)
+{
+        std::cout << "You've Collected a Coin!" << std::endl;
+}
 
 
 int main(int, char**)
 {
-    
 
     //nc::json::Load("json.txt", document);
     //
@@ -54,18 +64,20 @@ int main(int, char**)
     engine.Startup();
     nc::ObjectFactory::Instance().Initialize();
     nc::ObjectFactory::Instance().Register("PlayerComponent", new nc::Creator<nc::PlayerComponet, nc::Object>);
+    nc::ObjectFactory::Instance().Register("EnemyComponent", new nc::Creator<nc::EnemyComponet, nc::Object>);
+
+    nc::EventManager::Instance().Subscribe("PlayerDead", &GameEvent);
+    nc::EventManager::Instance().Subscribe("CollectedCoin", &GameEvent2);
+
     rapidjson::Document document;
     scene.Create(&engine);
     nc::json::Load("scene.txt", document);
-    scene.Read(document);
 
-    for (size_t i = 0; i < 10; i++)
-    {
-        nc::GameObject* gameObject = nc::ObjectFactory::Instance().Create<nc::GameObject>("ProtoCoin");
-        gameObject->m_transform.position = nc::Vector2{ nc::random(0,800), nc::random(200,400) };
-        gameObject->m_transform.angle = nc::random(0, 360);
-        scene.AddGameObject(gameObject);
-    }
+    scene.Read(document);
+    nc::TileMap tileMap;
+    nc::json::Load("tileMap.txt", document);
+    tileMap.Read(document);
+    tileMap.Create(&scene);
 
 
     SDL_Event event;

@@ -118,7 +118,7 @@ void nc::Scene::ReadAllGameObjects(const rapidjson::Value& value)
 
         if (gameObject)
         {
-            gameObject->Create(m_engine);
+            gameObject->Create(this);
             gameObject->Read(objectValue);
             AddGameObject(gameObject);
         }
@@ -140,9 +140,8 @@ void nc::Scene::ReadPrototypes(const rapidjson::Value& value)
 
             if (gameObject)
             {
-                gameObject->Create(m_engine);
+                gameObject->Create(this);
                 gameObject->Read(objectValue);
-                AddGameObject(gameObject);
                 ObjectFactory::Instance().Register(gameObject->m_name, new Prototype<Object>(gameObject));
             }
 
